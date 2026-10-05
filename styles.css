@@ -1,0 +1,88 @@
+/* ---------- Theme ---------- */
+:root {
+  --bg: #070b16;
+  --neon: #22d3ee;
+  --pink: #f472b6;
+  --gold: #ffd54a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 50% 20%, #101a36 0%, var(--bg) 65%);
+  color: #eef2ff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 1rem 2.5rem;
+}
+
+.wrap { width: 680px; max-width: 100%; text-align: center; }
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 0.35rem;
+  color: var(--neon);
+  text-shadow: 0 0 18px rgba(34, 211, 238, 0.65);
+}
+.tagline { color: #8b95b8; font-size: 0.9rem; margin: 0.35rem 0 1rem; }
+
+/* ---------- HUD ---------- */
+.hud {
+  display: flex; justify-content: space-between;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 0.9rem;
+}
+.hud-item { font-size: 0.75rem; color: #8b95b8; letter-spacing: 0.1rem; }
+.hud-item strong { display: block; font-size: 1.3rem; color: #fff; letter-spacing: 0; }
+#score { color: var(--gold); }
+#best  { color: var(--pink); }
+
+/* ---------- Game stage ---------- */
+.stage { position: relative; border-radius: 14px; overflow: hidden; }
+
+canvas {
+  display: block;
+  width: 100%;
+  background: #0a0f22;
+  border: 2px solid rgba(34, 211, 238, 0.35);
+  border-radius: 14px;
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.15);
+  cursor: none;               /* hide cursor over the canvas; paddle follows it */
+}
+
+/* ---------- Overlay screens ---------- */
+.overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 1rem;
+  background: rgba(4, 7, 18, 0.88);
+  backdrop-filter: blur(3px);
+  padding: 2rem;
+  border-radius: 14px;
+}
+.overlay.hidden { display: none; }
+
+.overlay h2 {
+  font-size: 1.9rem; letter-spacing: 0.25rem;
+  color: var(--neon);
+  text-shadow: 0 0 16px rgba(34, 211, 238, 0.6);
+}
+.overlay p { color: #aab4d4; line-height: 1.6; }
+.overlay .hint { font-size: 0.8rem; color: #5b6584; }
+
+.overlay button {
+  background: linear-gradient(135deg, var(--neon), #0ea5e9);
+  color: #04121a; font-weight: 800; font-size: 1.05rem;
+  border: none; border-radius: 12px;
+  padding: 0.75rem 2.2rem; cursor: pointer;
+  box-shadow: 0 6px 24px rgba(34, 211, 238, 0.4);
+  transition: transform 0.12s ease;
+}
+.overlay button:hover { transform: translateY(-2px) scale(1.03); }
+
+.footer { margin-top: 0.9rem; color: #5b6584; font-size: 0.8rem; }

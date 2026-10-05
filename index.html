@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Breakout 🧱 — Day 10</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>🧱 NEON BREAKOUT</h1>
+      <p class="tagline">Day 10 · featured build of my daily coding journey</p>
+    </header>
+
+    <!-- HUD: score, lives, level, high score -->
+    <div class="hud">
+      <div class="hud-item">SCORE <strong id="score">0</strong></div>
+      <div class="hud-item">LIVES <strong id="lives">3</strong></div>
+      <div class="hud-item">LEVEL <strong id="level">1</strong></div>
+      <div class="hud-item">BEST <strong id="best">0</strong></div>
+    </div>
+
+    <div class="stage">
+      <canvas id="game" width="640" height="480"></canvas>
+
+      <!-- Overlay screens (start / pause / level clear / game over / win) -->
+      <div class="overlay" id="overlay">
+        <h2 id="overlayTitle">NEON BREAKOUT</h2>
+        <p id="overlayText">Smash every brick. Catch the falling power-ups.<br />3 levels. How far can you get?</p>
+        <button id="overlayBtn">▶ Start game</button>
+        <p class="hint">Move: mouse or ← → &nbsp;•&nbsp; Pause: P &nbsp;•&nbsp; Launch ball: click / Space</p>
+      </div>
+    </div>
+
+    <p class="footer">Tip: the ball bounces sharper when it hits the edge of the paddle — use it to aim.</p>
+  </main>
+
+  <script src="levels.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
